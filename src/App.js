@@ -1,5 +1,6 @@
 import Memo from "./Component/Memo/Memo";
 import Card from "./Component/Card/Card";
+import Memos from "./Component/Memos";
 
 const INITIAL_MEMOS = [
   {
@@ -23,9 +24,10 @@ const INITIAL_MEMOS = [
 ];
 
 function App() {
+  const memos = INITIAL_MEMOS;
   return (
     <Card>
-      <Memo memo={INITIAL_MEMOS[0]}></Memo>
+      <Memos memos={memos}></Memos>
     </Card>
   );
 }

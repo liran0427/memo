@@ -13,12 +13,17 @@ const Memo = (props) => {
     setMemoCompletion("Finished");
   };
 
+  const toDoMemoHandler = () => {
+    setMemoCompletion("To do");
+  };
+
   return (
     <Card>
       <MemoTitle title={memoTitle}></MemoTitle>
       <MemoDate date={memoDate.toString()}></MemoDate>
       <MemoCompletion completion={memoCompletion}></MemoCompletion>
       <button onClick={finishMemoHandler}>Finish Memo</button>
+      <button onClick={toDoMemoHandler}>To do Memo</button>
     </Card>
   );
 };
