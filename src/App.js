@@ -1,3 +1,6 @@
+import Memo from "./Component/Memo/Memo";
+import Card from "./Component/Card/Card";
+
 const INITIAL_MEMOS = [
   {
     id: "a1",
@@ -20,7 +23,11 @@ const INITIAL_MEMOS = [
 ];
 
 function App() {
-  return <div>{INITIAL_MEMOS[0].id}</div>;
+  return (
+    <Card>
+      <Memo memo={INITIAL_MEMOS[0]}></Memo>
+    </Card>
+  );
 }
 
 export default App;
