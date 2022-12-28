@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Memo from "./Memo/Memo";
+import MemoForm from "./MemoForm/MemoForm";
 
 const Memos = (props) => {
-  const memos = props.memos;
-  const memo0 = memos[0];
-  const memo1 = memos[1];
-  const memo2 = memos[2];
+  const [memos, setMemos] = useState(props.memos);
+  const onSubmitHandler = (newSubmission) => {
+    setMemos((prevState) => [...prevState, newSubmission]);
+  };
+
   return (
     <div>
+      <MemoForm newSubmission={onSubmitHandler}></MemoForm>
       {memos.map((item) => (
         <Memo memo={item}></Memo>
       ))}
